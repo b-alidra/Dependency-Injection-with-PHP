@@ -38,17 +38,17 @@ pre { background: #000; color: #fff; padding: 15px;}
 <body>
   <a href="http://github.com/b-alidra/PHP-Dependency-Injection"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container" style="padding:0 100px;width:80%;height:700px;">
+  <div id="container" style="padding:0 100px;width:85%;height:700px;">
 	<div class="download">
-     <br/><br/><br/>
-     <a href="http://github.com/b-alidra/PHP-Dependency-Injection/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"/></a>        
-      <a href="http://github.com/b-alidra/PHP-Dependency-Injection/tarball/master">
+     	<br/><br/><br/>
+     	<a href="http://github.com/b-alidra/PHP-Dependency-Injection/zipball/master">
+        	<img border="0" width="90" src="http://github.com/images/modules/download/zip.png"/></a>        
+      	<a href="http://github.com/b-alidra/PHP-Dependency-Injection/tarball/master">
         <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"/></a>
     </div>
 
     <h1><a href="http://github.com/b-alidra/Dependency-Injection-with-PHP/" style="color:#1240d8">Dependency injection with PHP</a>
-      <span class="small">by <a href="http://github.com/b-alidra">b-alidra</a></span></h1>
+   	<span class="small">by <a href="http://github.com/b-alidra">Belkacem Alidra</a></span></h1>
 
     <div class="description">
       Dependency injection engine written in PHP.
@@ -87,28 +87,49 @@ pre { background: #000; color: #fff; padding: 15px;}
       			<b>zsOrm</b> : which is our ORM.<br/>
       			It needs an object implementing the zsIdataSource interface.
       		</li>
-      	</ul>
-      	
+      	</ul>      	
   	</p>
     <img src="http://www.b-alidra.com/classes.jpg" alt="Configuration file" width="913px" height="516px"/>
-    <h3>Configuration file</h3>
+    
+    <h3>Configuration file</h3>    
     <p class="text">
       	The configuration file 'config.xml' contains service definitions,<br/>
       	which are rules defining how objects are created.<br/><br/>
-      	Each service tag must contain :
+      	Each <b>service</b> tag must contain :
       	<ul class="text">
-      		<li> An id, which will be used to access the service.</li>
-      		<li> A class attribute, which represents the class implementing the service.</li>
+      		<li> An <b>id</b>, which will be used to access the service.</li>
+      		<li> A <b>class</b> attribute, which represents the class implementing the service.</li>
+      	</ul>
+  	</p>
+  	
+  	<p class="text">
+      	<i>Optionnal attributes</i> :
+      	<ul class="text">
+      		<li> <b>singleton</b> : must the object be created only once ?</li>
+      	</ul>
+   	</p>
+   	
+  	<p class="text">
+      	<i>Optionnal tags</i> :
+      	<ul class="text">
       		<li> Properties are used to specify an object property default value, or a dependency from an other object.</li>
+      		<li> Constructor arguments.</li>
       	</ul>
    	</p>
    	<p class="text">
-      	Let's declare a service to access the <b>zsPdo</b> object :      	
+      	Let's declare a service to access the <b>zsPdo</b> object :<br/><br/>
+      	 - We'll call this service <b>dbAdapter</b>, implemented by the class <b>zsPdo</b>.<br/>
+      	 - Only one instance must be created, so we'll set the <b>singleton</b> attribute to "true". <br/> 
+      	 - The constructor needs 4 arguments : dsn, user, password and optionnal driver options. <br/><br/>
+      	 Here it is : 	
   	</p>
   	
     <img src="http://www.b-alidra.com/xml-pdo.jpg" alt="Configuration file"/>
     
-        
+   	<p class="text">
+     	Now, let's create the service for the <b>zsDb</b> object :<br/><br/>
+     	
+     </p>
     <h3>Objects instanciation</h3>
     <img src="http://www.b-alidra.com/code.jpg" alt="Objects instanciation code"/>
     
