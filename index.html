@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Belkacem Alidra - Dependency injection with PHP @ GitHub</title>
+
+<style type="text/css">
+body {
+   margin-top: 1.0em;
+   background-color: #FFFFFF; /*#edbf27;*/
+	font-family: "Tahoma"; /*"Helvetica,Arial,FreeSans";*/
+   color: #000000;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+h1 { font-size: 2.6em; color: #000066; margin-bottom: 3px; }
+.small { font-size: 1.0em; }
+h1 .small { font-size: 0.4em; }
+h1 a { text-decoration: none }
+h2 { font-size: 1.5em; color: #1240d8; }
+    h3 { text-align: left; color: #d8d840; }
+    a { color: #d8d840; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+.text {font: normal 14px Tahoma; }
+</style>
+
+</head>
+
+<body>
+  <a href="http://github.com/b-alidra/PHP-Dependency-Injection"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container" style="padding:0 100px;width:80%;height:700px;">
+	<div class="download">
+     <br/><br/><br/>
+     <a href="http://github.com/b-alidra/PHP-Dependency-Injection/zipball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"/></a>        
+      <a href="http://github.com/b-alidra/PHP-Dependency-Injection/tarball/master">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"/></a>
+    </div>
+
+    <h1><a href="http://github.com/b-alidra/Dependency-Injection-with-PHP/" style="color:#1240d8">Dependency injection with PHP</a>
+      <span class="small">by <a href="http://github.com/b-alidra">b-alidra</a></span></h1>
+
+    <div class="description">
+      Dependency injection engine written in PHP.
+    </div>
+
+	<p style="font:italic 13px Tahoma;">
+		"   Dependency injection (DI) is a design pattern  with a core principal to separate behavior from dependency resolution. <br/>
+		In other words: a technique for decoupling highly dependent software components.<br/><br/>
+		Within a software application, a consumer component which depends on another service component would be highly coupled<br/> 
+		if the consumer component needs to create an instance of the service component, since all the details of the creation <br/>
+		of the service will need to be explicit in the consumer component. <br/>
+		Dependency injection works by adding an external dependency into the consumer component—that is, <br/>
+		externally injecting a reference to the service component inside the consumer component.<br/><br/>
+
+		Dependency inversion is a specific form of inversion of control where the concern being inverted is the process of obtaining the needed dependency. <br/>
+		The term was first coined by Martin Fowler to describe the mechanism more clearly." - <a class="small" href="http://en.wikipedia.org/wiki/Dependency_injection"><b>Wikipedia</b></a>
+	</p>
+    
+    <h2>Exemple</h2>
+    
+    <h3>Configuration file</h3>
+    <p class="text">
+      	Let's have a look on the following class diagram :<br/><br/>
+      	We have 3 classes :
+      	<ul class="text">
+      		<li>	
+      			<b>zsPdo</b> : which is our Data Access Layer.<br/>
+      			It implements the zsIDb interface.
+      		</li><br/>
+      		<li>	
+      			<b>zsDb</b> : which is our Data Access Object.<br/>
+      			It implements the zsIDb interface and <br/>
+      			needs an object implementing the zsIdataSource interface.
+      		</li><br/>
+      		<li>	
+      			<b>zsOrm</b> : which is our ORM.<br/>
+      			It needs an object implementing the zsIdataSource interface.
+      		</li>
+      	</ul>
+      	
+  	</p>
+    <img src="http://www.b-alidra.com/classes.jpg" alt="Configuration file" width="913px" height="516px"/>
+    <h3>Configuration file</h3>
+    <p class="text">
+      	The configuration file 'config.xml' contains service definitions,<br/>
+      	which are rules defining how objects are created.<br/><br/>
+      	Each service tag must contain :
+      	<ul class="text">
+      		<li> An id, which will be used to access the service.</li>
+      		<li> A class attribute, which represents the class implementing the service.</li>
+      		<li> Properties are used to specify an object property default value, or a dependency from an other object.</li>
+      	</ul>
+   	</p>
+   	<p class="text">
+      	Let's declare a service to access the <b>zsPdo</b> object :      	
+  	</p>
+  	
+    <img src="http://www.b-alidra.com/xml-pdo.jpg" alt="Configuration file"/>
+    
+        
+    <h3>Objects instanciation</h3>
+    <img src="http://www.b-alidra.com/code.jpg" alt="Objects instanciation code"/>
+    
+    <h2>Contact</h2>
+	<p>Belkacem Alidra (belkacem.alidra@gmail.com)
+<br/> </p>
+
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="http://github.com/b-alidra/PHP-Dependency-Injection/zipball/master">zip</a> or
+      <a href="http://github.com/b-alidra/PHP-Dependency-Injection/tarball/master">tar</a> formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/b-alidra/PHP-Dependency-Injection</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/b-alidra/PHP-Dependency-Injection">b-alidra/PHP-Dependency-Injection</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>
