@@ -21,9 +21,9 @@
 	
 	/* Container creation with service definitions passed in the constructor */
 	$container 	= new zsServiceContainer (	array(	'orm' 			=> $orm,
-													'dataSource' 	=> $dataSource,
-													'dbAdapter'		=> $dbAdapter ),
-											false );
+								'dataSource' 	=> $dataSource,
+								'dbAdapter'		=> $dbAdapter ),
+								false );
 
 	/* We retrieve our orm singleton instance */
 	$orm		= $container->getService('orm');
