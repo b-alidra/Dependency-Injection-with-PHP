@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services>
+	
+	<service id="orm" class="zsOrm" singleton="true">	
+		<property name="_dataSource">
+			<ref service="dataSource"/>
+		</property>		
+	</service>
+	
+	<service id="dataSource" class="zsDb" singleton="true">	
+		<constructor_arg>
+			<ref service="dbAdapter"/>
+		</constructor_arg>		
+	</service>
+	
+	<service id="dbAdapter" class="zsPdo" singleton="true">	
+		<constructor_arg>
+			<value>mysql:localhost</value>
+		</constructor_arg>
+		<constructor_arg>
+			<value>root</value>
+		</constructor_arg>
+		<constructor_arg>
+			<value>ZS_NULL_STRING</value>
+		</constructor_arg>
+		<constructor_arg>
+			<value>ZS_NULL_VAR</value>
+		</constructor_arg>	
+	</service>
+	
+</services>
+	
