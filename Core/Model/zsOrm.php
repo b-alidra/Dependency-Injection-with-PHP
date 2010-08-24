@@ -23,7 +23,7 @@ class zsOrm
     public $MANY_TO_MANY;
     
     /**
-    * @var      zsDataSourceAdapter
+    * @var      zsIDataSource
     */
     protected $_dataSource;
     
@@ -48,7 +48,7 @@ class zsOrm
     private $_isNew;
     
     /**
-    * @var      zsDataSourceAdapter
+    * @var      zsIDataSource
     */
     private $_dataSrc;
     
@@ -84,7 +84,7 @@ class zsOrm
     }
     
     /**
-    * @return   zsDataSourceAdapter
+    * @return   zsIdataSource
     */
     protected function _getDataSource()
     {
@@ -92,7 +92,7 @@ class zsOrm
     }
     
     /**
-    * @return   zsDataSourceAdapter
+    * @return   zsIdataSource
     */
     public function getDataSource()
     {
@@ -100,10 +100,10 @@ class zsOrm
     }
     
     /**
-    * @param    zsDataSourceAdapter $dataSource    
+    * @param    zsIdataSource $dataSource    
     * @return   void
     */
-    public function setDataSource(zsDataSourceAdapter $dataSource)
+    public function setDataSource(zsIdataSource $dataSource)
     {
        // TODO: implement
     }

@@ -8,12 +8,12 @@ class zsDb extends zsSql implements zsITransaction, zsIDataSource, zsICrud
 {
     
     /**
-    * @var      zsDbAdapter
+    * @var      zsIDb
     */
     private $_database;
     
     /**
-    * @param    zsDbAdapter $db
+    * @param    zsIDb $db
     */
     public function zsDb(zsIDb $db)
     {
